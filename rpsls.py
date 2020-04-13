@@ -1,36 +1,35 @@
 #coding:gbk
 """
-µÚÒ»¸öĞ¡ÏîÄ¿£ºRock-paper-scissors-lizard-Spock
-×÷Õß£º
-ÈÕÆÚ£º
+rpslså°æ¸¸æˆ
+æ¤äº§å…­ç­ç¨‹æŸ¯ä¸¾
 """
 
 import random
 
 
 """
-0 - Ê¯Í·
-1 - Ê·²¨¿Ë
-2 - Ö½
-3 - òáòæ
-4 - ¼ôµ¶
+0 - çŸ³å¤´
+1 - å²æ³¢å…‹
+2 - çº¸
+3 - èœ¥èœ´
+4 - å‰ªåˆ€
 """
-# ÒÔÏÂÎªÍê³ÉÓÎÏ·ËùĞèÒªÓÃµ½µÄ×Ô¶¨Òåº¯Êı
+# ä»¥ä¸‹ä¸ºå®Œæˆæ¸¸æˆæ‰€éœ€è¦ç”¨åˆ°çš„è‡ªå®šä¹‰å‡½æ•°
 
 def name_to_number(name):
     """
-    ½«ÓÎÏ·¶ÔÏó¶ÔÓ¦µ½²»Í¬µÄÕûÊı
+    å°†æ¸¸æˆå¯¹è±¡å¯¹åº”åˆ°ä¸åŒçš„æ•´æ•°
     """
 
-    if name=='Ê¯Í·':
+    if name=='çŸ³å¤´':
       return 0
-    elif name=='Ê·²¨¿Ë':
+    elif name=='å²æ³¢å…‹':
       return 1
-    elif name=='Ö½':
+    elif name=='çº¸':
       return 2
-    elif name=='òáòæ':
+    elif name=='èœ¥èœ´':
       return 3
-    elif name=='¼ôµ¶':
+    elif name=='å‰ªåˆ€':
       return 4
     else:
       return print("Error:No Carrect Name")
@@ -39,18 +38,18 @@ def name_to_number(name):
 
 def number_to_name(number):
     """
-    ½«ÕûÊı (0, 1, 2, 3, or 4)¶ÔÓ¦µ½ÓÎÏ·µÄ²»Í¬¶ÔÏó
+    å°†æ•´æ•° (0, 1, 2, 3, or 4)å¯¹åº”åˆ°æ¸¸æˆçš„ä¸åŒå¯¹è±¡
     """
     if number==0:
-      return 'Ê¯Í·'
+      return 'çŸ³å¤´'
     elif number==1:
-      return 'Ê·²¨¿Ë'
+      return 'å²æ³¢å…‹'
     elif number==2:
-      return 'Ö½'
+      return 'çº¸'
     elif number==3:
-      return 'òáòæ'
+      return 'èœ¥èœ´'
     elif number==4:
-      return '¼ôµ¶'
+      return 'å‰ªåˆ€'
     else:
       return print("Error:No Carrect Name")
 
@@ -58,32 +57,32 @@ def number_to_name(number):
 
 def rpsls(player_choice):
     """
-    ÓÃ»§Íæ¼ÒÈÎÒâ¸ø³öÒ»¸öÑ¡Ôñ£¬¸ù¾İRPSLSÓÎÏ·¹æÔò£¬ÔÚÆÁÄ»ÉÏÊä³ö¶ÔÓ¦µÄ½á¹û
+    ç”¨æˆ·ç©å®¶ä»»æ„ç»™å‡ºä¸€ä¸ªé€‰æ‹©ï¼Œæ ¹æ®RPSLSæ¸¸æˆè§„åˆ™ï¼Œåœ¨å±å¹•ä¸Šè¾“å‡ºå¯¹åº”çš„ç»“æœ
 
     """
     print("--------")
-    print("ÓÎÏ·ÕßµÄÑ¡ÔñÊÇ"+player_choice)
+    print("æ¸¸æˆè€…çš„é€‰æ‹©æ˜¯"+player_choice)
     player_number=name_to_number(player_choice)
     comp_number=random.randrange(0,4)
     comp_choice=number_to_name(comp_number)
-    print("¼ÆËã»úµÄÑ¡ÔñÊÇ"+comp_choice)
+    print("è®¡ç®—æœºçš„é€‰æ‹©æ˜¯"+comp_choice)
     diff=(comp_number-player_number)%5
     if diff==1 or diff==2:
-      print("»úÆ÷Ó®ÁË")
+      print("æœºå™¨èµ¢äº†")
     elif diff==3 or diff==4:
-      print("ÄúÓ®ÁË")
+      print("æ‚¨èµ¢äº†")
     elif diff==0:
-      print("Æ½¾Ö")
+      print("å¹³å±€")
     else:
       print("Error:No Carrect Name")
 
      
 
 
-# ¶Ô³ÌĞò½øĞĞ²âÊÔ
-print("»¶Ó­Ê¹ÓÃRPSLSÓÎÏ·")
+# å¯¹ç¨‹åºè¿›è¡Œæµ‹è¯•
+print("æ¬¢è¿ä½¿ç”¨RPSLSæ¸¸æˆ")
 print("----------------")
-print("ÇëÊäÈëÄúµÄÑ¡Ôñ:")
+print("è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©:")
 choice_name=input()
 rpsls(choice_name)
 
